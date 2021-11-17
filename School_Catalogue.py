@@ -32,6 +32,10 @@ class Primary(School):
         PrimaryRepr = super().__repr__()
         return PrimaryRepr + " The pickup policy is {}.".format(self.pickupPolicy)
 
+class Middle(School):
+    def __init__(self, name, level, numberOfStudent):
+        super().__init__(name, level, numberOfStudent)
+
 #------ TEST CLASS SCHOOL WITH THE CODE BELOW --------:
 
 # mySchool = School("Codecademy", "high", 100)
