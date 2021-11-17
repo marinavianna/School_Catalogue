@@ -20,6 +20,17 @@ class School:
         SchoolRepr = 'A {} school named {} with {} students.'.format(self.level, self.name, self.numberOfStudent)
         return SchoolRepr
 
+class Primary(School):
+    def __init__(self, name, numberOfStudent, pickupPolicy):
+        super().__init__(name,'primary', numberOfStudent)
+        self.pickupPolicy = pickupPolicy
+
+    def getPickupPolicy(self):
+        return self.pickupPolicy
+    
+    def __repr__(self):
+        PrimaryRepr = super().__repr__()
+        return PrimaryRepr + " The pickup policy is {}.".format(self.pickupPolicy)
 
 #------ TEST CLASS SCHOOL WITH THE CODE BELOW --------:
 
@@ -30,3 +41,8 @@ class School:
 # mySchool.setNumberOfStudent(200)
 # print(mySchool.getNumberOfStudent())
 
+#------ TEST CLASS PRIMARY WITH THE CODE BELOW --------:
+
+# testSchool = Primary("Codecademy", 300, "Pickup Allowed")
+# print(testSchool.getPickupPolicy())
+# print(testSchool)
