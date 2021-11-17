@@ -36,6 +36,18 @@ class Middle(School):
     def __init__(self, name, level, numberOfStudent):
         super().__init__(name, level, numberOfStudent)
 
+class High(School):
+    def __init__(self, name, numberOfStudent, *sportsTeams):
+        super().__init__(name, 'high', numberOfStudent)
+        self.sportsTeams = sportsTeams
+
+    def getSportsTeams(self):
+        return self.sportsTeams
+            
+    def __repr__(self):
+        PrimaryRepr = super().__repr__()
+        return PrimaryRepr + ' The sports teams are: ' + ', '.join(self.sportsTeams) + '.'
+
 #------ TEST CLASS SCHOOL WITH THE CODE BELOW --------:
 
 # mySchool = School("Codecademy", "high", 100)
@@ -50,3 +62,9 @@ class Middle(School):
 # testSchool = Primary("Codecademy", 300, "Pickup Allowed")
 # print(testSchool.getPickupPolicy())
 # print(testSchool)
+
+#------ TEST CLASS HIGH WITH THE CODE BELOW --------:
+
+# c = High("Codecademy High", 500, "Tennis", "Basketball")
+# print(c.getSportsTeams())
+# print(c)
